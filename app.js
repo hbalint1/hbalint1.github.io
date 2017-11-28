@@ -9,9 +9,7 @@ var options = {
   cert: fs.readFileSync('certificate.crt')
 };
 
-https.createServer(options, function (req, res) {
-  res.writeHead(200, {"Content-Type": "text/html"});
-}).listen(8000);
+https.createServer(options, app).listen(8000);
 
 app.use( express.static( __dirname + '/' ));
 
